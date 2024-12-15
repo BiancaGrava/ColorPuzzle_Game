@@ -1,6 +1,6 @@
 Color Puzzle Game
 
-Note: The project still needs to be commented and tested, other than that, the version is final
+Note: The project still needs to be and tested, other than that, the version is final
 
 1. Introduction
 The Color Puzzle Game is an interactive and visually engaging desktop game designed to challenge players’ logic, spatial reasoning, and pattern recognition skills. It features a customizable board size, allowing players to tailor the game to their preferences. Players select a level and aim to solve puzzles by manipulating the colors on the board to achieve a specific goal.
