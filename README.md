@@ -2,11 +2,11 @@ Color Puzzle Game
 
 1. Introduction
 The Color Puzzle Game is an interactive and visually engaging desktop game designed to challenge players’ logic, spatial reasoning, and pattern recognition skills. It features a customizable board size, allowing players to tailor the game to their preferences. Players select a level and aim to solve puzzles by manipulating the colors on the board to achieve a specific goal.
-________________________________________
+
 2. Target Audience
 •	Audience: Puzzle enthusiasts of all ages who enjoy simple, logic-based challenges. Individuals looking for a light mental workout or a relaxing game experience.
 The game is designed to be accessible to a broad audience, with a maximum difficulty level that remains moderately challenging.
-________________________________________
+
 3. Rules of the Game
 Main Rules
 •	The board starts with most squares colored in a default color.
@@ -45,15 +45,25 @@ o	Invalid board dimensions trigger the showing of a screen with a specific error
 •	Winner Screen:
 o	When a player wins, the showing of screen with a specific congratulations message is triggered.
 
-________________________________________
+
 
 6. Visual and Aesthetic Design
-________________________________________
-________________________________________
-________________________________________
-________________________________________
+•	Menu for Customizing
+ 
+
+•	Error at customization
+ 
+
+•	Menu for choosing levels
+ 
+
+•	Playing
+o	Initial state for difficult level – selection of level 3 from level selection
+ 
+o	State after clicking on the square in the top left corner
+ 
+
 7. Future Enhancements
 •	Additional levels with new mechanics can be integrated in the already developed framework.
 •	Any number of other challenges and levels can be added.
-
 
