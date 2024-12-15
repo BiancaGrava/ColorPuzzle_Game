@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,6 +19,7 @@ namespace Grava_Bianca_culori
     {
         public Button[,] Buttons;
         public Color color;
+        private Color defaultColor = Color.AliceBlue;
         private int width;
         private int height;
         public Board(int height, int width, Color colour)
@@ -33,7 +34,7 @@ namespace Grava_Bianca_culori
                     b[i, j].Size = new Size(80, 80);//stabilire dimensiuni buton
                     b[i, j].Location = new Point(15 + (80 + 10) * j, 13 + (80 + 10) * i); // Adjust position with spacing
                     b[i, j].Enabled = true;
-                    b[i, j].BackColor = Color.AliceBlue;
+                    b[i, j].BackColor = defaultColor;
                     b[i, j].Click += new System.EventHandler(buton_clic);
                 }
             Buttons = b;
@@ -45,7 +46,7 @@ namespace Grava_Bianca_culori
                 for (int j = 0; j < width; j++)
                 {
                     Buttons[i, j].Enabled = true;
-                    Buttons[i, j].BackColor = Color.AliceBlue;
+                    Buttons[i, j].BackColor = defaultColor;
                 }
         }
         public void buton_clic(object sender, EventArgs e)
@@ -75,17 +76,17 @@ namespace Grava_Bianca_culori
         }
         public void changeColor(Button x)
         {
-            if (x.BackColor == Color.AliceBlue)
+            if (x.BackColor == defaultColor)
                 x.BackColor = color;
             else
-                x.BackColor = Color.AliceBlue;
+                x.BackColor = defaultColor;
         }
         private bool won_game()
         {
             int i, j;
             for (i = 0; i < height; i++)
                 for (j = 0; j < width; j++)
-                    if (Buttons[i, j].BackColor == Color.AliceBlue)
+                    if (Buttons[i, j].BackColor == defaultColor)
                         return false;
             return true;
         }
