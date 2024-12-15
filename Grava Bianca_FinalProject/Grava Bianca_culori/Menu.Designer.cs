@@ -94,7 +94,6 @@
             this.Margin = new System.Windows.Forms.Padding(11, 10, 11, 10);
             this.Name = "Menu";
             this.Text = "Menu";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
 
         }
