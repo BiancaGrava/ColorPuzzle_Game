@@ -10,11 +10,15 @@ namespace Grava_Bianca_culori
 {
     public class Board
     {
+        //Aesthetic of the board
         public Button[,] Buttons;
         public Color color;
         private Color defaultColor = Color.AliceBlue;
-        private int width;
-        private int height;
+        //Size of the board
+        public int width;
+        public int height;
+        //Colorer that decides hw the board should be colored
+        private IColorer colorer;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Board"/> class.
@@ -23,7 +27,7 @@ namespace Grava_Bianca_culori
         /// <param name="height">The number of rows on the game board.</param>
         /// <param name="width">The number of columns on the game board.</param>
         /// <param name="colour">The color that will be used to toggle the buttons when clicked.</param>
-        public Board(int height, int width, Color colour)
+        public Board(int height, int width, Color colour, IColorer colorer)
         {
             this.width = width;
             this.height = height;
@@ -44,6 +48,7 @@ namespace Grava_Bianca_culori
 
             Buttons = b;  // Assign the array of buttons to the class property
             color = colour; // Set the color to be used when a button is clicked
+            this.colorer = colorer;
         }
 
         /// <summary>
@@ -78,11 +83,7 @@ namespace Grava_Bianca_culori
                     if (Buttons[i, j] == sender) // If this is the clicked button
                     {
                         // Change the color of the clicked button and its adjacent buttons
-                        changeColor(Buttons[i, j]);
-                        if (i > 0) changeColor(Buttons[i - 1, j]); // Change color of the button above
-                        if (i < height - 1) changeColor(Buttons[i + 1, j]); // Change color of the button below
-                        if (j > 0) changeColor(Buttons[i, j - 1]); // Change color of the button to the left
-                        if (j < width - 1) changeColor(Buttons[i, j + 1]); // Change color of the button to the right
+                        colorer.coloring(this, i, j);
 
                         // Check if the game has been won (all buttons are now colored)
                         if (won_game())

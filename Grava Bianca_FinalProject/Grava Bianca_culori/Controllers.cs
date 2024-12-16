@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -49,16 +49,18 @@ namespace Grava_Bianca_culori
         int width;
         int height;
         Board board;
+        IColorer colorer;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="SimpleBoardPreparer"/> class with the specified height and width.
         /// </summary>
         /// <param name="Height">The height (number of rows) of the game board.</param>
         /// <param name="Width">The width (number of columns) of the game board.</param>
-        public SimpleBoardPreparer(int Height, int Width)
+        public SimpleBoardPreparer(int Height, int Width, IColorer colourer)
         {
             width = Width;
             height = Height;
+            colorer= colourer;
         }
 
         /// <summary>
@@ -68,7 +70,7 @@ namespace Grava_Bianca_culori
         /// <param name="width">The width (number of columns) of the game board.</param>
         public void PrepareBoard(int height, int width)
         {
-            board = new Board(height, width, Color.RoyalBlue);
+            board = new Board(height, width, Color.RoyalBlue,colorer);
         }
 
         /// <summary>
@@ -106,16 +108,18 @@ namespace Grava_Bianca_culori
         int width;
         int height;
         Board board;
+        IColorer colorer;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="MediumBoardPreparer"/> class with the specified height and width.
         /// </summary>
         /// <param name="Height">The height (number of rows) of the game board.</param>
         /// <param name="Width">The width (number of columns) of the game board.</param>
-        public MediumBoardPreparer(int Height, int Width)
+        public MediumBoardPreparer(int Height, int Width, IColorer colourer)
         {
             width = Width;
             height = Height;
+            colorer = colourer;
         }
 
         /// <summary>
@@ -126,7 +130,7 @@ namespace Grava_Bianca_culori
         /// <param name="width">The width (number of columns) of the game board.</param>
         public void PrepareBoard(int height, int width)
         {
-            board = new Board(height, width, Color.SeaGreen);
+            board = new Board(height, width, Color.SeaGreen,colorer);
 
             // Apply different color configurations based on the board dimensions
             if (width == 2 || height == 2)
@@ -135,10 +139,7 @@ namespace Grava_Bianca_culori
             }
             else if (width >= 3 && height >= 3)
             {
-                board.Buttons[0, width - 1].BackColor = Color.SeaGreen;
-                board.Buttons[1, width - 1].BackColor = Color.SeaGreen;
-                board.Buttons[1, width - 2].BackColor = Color.SeaGreen;
-                board.Buttons[2, width - 1].BackColor = Color.SeaGreen;
+                colorer.coloring(board, 1, width - 1);
             }
         }
 
@@ -157,10 +158,7 @@ namespace Grava_Bianca_culori
             }
             else if (width >= 3 && height >= 3)
             {
-                board.Buttons[0, width - 1].BackColor = Color.SeaGreen;
-                board.Buttons[1, width - 1].BackColor = Color.SeaGreen;
-                board.Buttons[1, width - 2].BackColor = Color.SeaGreen;
-                board.Buttons[2, width - 1].BackColor = Color.SeaGreen;
+                colorer.coloring(board, 1, width - 1);
             }
         }
 
@@ -191,16 +189,18 @@ namespace Grava_Bianca_culori
         int width;
         int height;
         Board board;
+        IColorer colorer;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="DifficultBoardPreparer"/> class with the specified height and width.
         /// </summary>
         /// <param name="Height">The height (number of rows) of the game board.</param>
         /// <param name="Width">The width (number of columns) of the game board.</param>
-        public DifficultBoardPreparer(int Height, int Width)
+        public DifficultBoardPreparer(int Height, int Width, IColorer colourer)
         {
             width = Width;
             height = Height;
+            colorer = colourer;
         }
 
         /// <summary>
@@ -211,7 +211,7 @@ namespace Grava_Bianca_culori
         /// <param name="width">The width (number of columns) of the game board.</param>
         public void PrepareBoard(int height, int width)
         {
-            board = new Board(height, width, Color.Violet);
+            board = new Board(height, width, Color.Violet, colorer);
             int i, j;
             int y;
             Random rnd = new Random();

@@ -73,6 +73,16 @@ namespace Grava_Bianca_culori.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap colorerErrrr {
+            get {
+                object obj = ResourceManager.GetObject("colorerErrrr", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap congrats {
             get {
                 object obj = ResourceManager.GetObject("congrats", resourceCulture);

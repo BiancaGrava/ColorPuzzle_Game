@@ -44,6 +44,13 @@ namespace Grava_Bianca_culori
             // Retrieve the input values from the textboxes
             string Width = textBoxWidth.Text;
             string Height = textBoxHeight.Text;
+            string selectedValue;
+            bool noColorer = false;
+            IColorer colorer;
+            if (comboBox1.SelectedIndex == -1)
+            {
+                noColorer = true;
+            }
             int width, height;
             bool isError = false;
 
@@ -56,30 +63,51 @@ namespace Grava_Bianca_culori
             {
                 isError = true; // Flag as error if parsing fails
             }
-
             // If there was an error, show an error form
-            if (isError)
+            if (isError || noColorer)
             {
-                ErrorForm err = new ErrorForm();
-                err.Show();
+                if(isError)
+                {
+                    ErrorForm err = new ErrorForm();
+                    err.Show();
+                }
+                if(noColorer)
+                {
+                    ColorerError colorerError = new ColorerError();
+                    colorerError.Show();
+                }
+                return;
+            }
+            selectedValue = comboBox1.Text.ToString();
+            if (selectedValue!= "Color 4 neighbours"&& selectedValue != "Color 3 neighbours")
+            {
+                noColorer = true;
+            }
+            if (noColorer)
+            {
+                ColorerError colorerError = new ColorerError();
+                colorerError.Show();
+                return;
             }
             else
             {
                 // If the input is valid, create the main menu form and pass the dimensions
-                Menu form1 = new Menu(height, width);
-                form1.Show();
+                if(selectedValue== "Color 4 neighbours")
+                {
+                    colorer = new Color4Neighbours();
+                    Menu form1 = new Menu(height, width, colorer);
+                    form1.Show();
+                }
+                else
+                {
+                    if(selectedValue== "Color 3 neighbours")
+                    {
+                        colorer = new Color3Neighbours();
+                        Menu form1 = new Menu(height, width, colorer);
+                        form1.Show();
+                    }
+                }
             }
-        }
-
-        /// <summary>
-        /// Event handler for text change in the 'Level' textbox.
-        /// Currently not implemented, but can be used for additional functionality if needed in the future.
-        /// </summary>
-        /// <param name="sender">The object that triggered the event (the 'Level' textbox).</param>
-        /// <param name="e">Event data.</param>
-        private void textBoxLevel_TextChanged(object sender, EventArgs e)
-        {
-            // This method is currently empty, but could handle changes to the 'Level' textbox in the future
         }
     }
 }

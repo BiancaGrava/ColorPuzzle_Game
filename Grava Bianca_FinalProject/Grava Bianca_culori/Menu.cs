@@ -23,7 +23,7 @@ namespace Grava_Bianca_culori
         public int width;
 
         /// <summary>
-        /// A list of possible board levels (Simple, Medium, and Difficult).
+        /// A list of possible board levels (Simple, Medium, and Difficult) in this specific case.
         /// </summary>
         public List<IBoardPreparer> possibleLevels;
 
@@ -33,7 +33,7 @@ namespace Grava_Bianca_culori
         /// </summary>
         /// <param name="height">The height of the game board.</param>
         /// <param name="width">The width of the game board.</param>
-        public Menu(int height, int width)
+        public Menu(int height, int width, IColorer c4)
         {
             InitializeComponent();
             this.height = height;
@@ -41,9 +41,9 @@ namespace Grava_Bianca_culori
 
             // Initialize the possible game levels (Simple, Medium, and Difficult).
             possibleLevels = new List<IBoardPreparer>() {
-                new SimpleBoardPreparer(height, width),
-                new MediumBoardPreparer(height, width),
-                new DifficultBoardPreparer(height, width)
+                new SimpleBoardPreparer(height, width,c4),
+                new MediumBoardPreparer(height, width,c4),
+                new DifficultBoardPreparer(height, width,c4)
             };
         }
 

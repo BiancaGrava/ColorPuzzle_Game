@@ -61,3 +61,4 @@ D:\2024_4\Universitate\Charles\C#\Grava Bianca_FinalProject\Grava Bianca_culori\
 D:\2024_4\Universitate\Charles\C#\Grava Bianca_FinalProject\Grava Bianca_culori\obj\Debug\Grava_Bianca_culori.ErrorForm.resources
 D:\2024_4\Universitate\Charles\C#\Grava Bianca_FinalProject\Grava Bianca_culori\obj\Debug\Grava_Bianca_culori.Menu.resources
 D:\2024_4\Universitate\Charles\C#\Grava Bianca_FinalProject\Grava Bianca_culori\obj\Debug\Grava_Bianca_culori.Winner.resources
+D:\2024_4\Universitate\Charles\C#\Grava Bianca_FinalProject\Grava Bianca_culori\obj\Debug\Grava_Bianca_culori.ColorerError.resources

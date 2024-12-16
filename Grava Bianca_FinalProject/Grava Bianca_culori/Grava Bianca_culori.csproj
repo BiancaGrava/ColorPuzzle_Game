@@ -47,12 +47,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Board.cs" />
+    <Compile Include="Colorers.cs" />
     <Compile Include="Controllers.cs" />
     <Compile Include="ErrorForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ErrorForm.Designer.cs">
       <DependentUpon>ErrorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ColorerError.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ColorerError.Designer.cs">
+      <DependentUpon>ColorerError.cs</DependentUpon>
     </Compile>
     <Compile Include="Menu.cs">
       <SubType>Form</SubType>
@@ -85,6 +92,9 @@
     <Compile Include="Winner.Designer.cs">
       <DependentUpon>Winner.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ColorerError.resx">
+      <DependentUpon>ColorerError.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ErrorForm.resx">
       <DependentUpon>ErrorForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -159,6 +169,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\congrats.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\colorerErrrr.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
