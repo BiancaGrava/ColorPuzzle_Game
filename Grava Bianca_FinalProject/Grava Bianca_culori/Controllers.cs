@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -45,6 +45,7 @@ namespace Grava_Bianca_culori
 
     class SimpleBoardPreparer : IBoardPreparer
     {
+        //board information
         int width;
         int height;
         Board board;
@@ -101,6 +102,7 @@ namespace Grava_Bianca_culori
 
     class MediumBoardPreparer : IBoardPreparer
     {
+        //board information
         int width;
         int height;
         Board board;
@@ -185,6 +187,7 @@ namespace Grava_Bianca_culori
 
     class DifficultBoardPreparer : IBoardPreparer
     {
+        //board information
         int width;
         int height;
         Board board;
